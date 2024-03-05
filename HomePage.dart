@@ -1,56 +1,17 @@
 import 'package:flutter/material.dart';
-
 import 'ActiveChats.dart';
 import 'RecentChats.dart';
+import 'AddGroupChat.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Messages"),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              // Add search functionality here
-            },
-          ),
-        ],
-      ), // AppBar
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.article),
-            label: "Forums",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: "Messages",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_box),
-            label: "Profile",
-          ),
-        ],
-        backgroundColor: Color(0xffae32ff),
-        elevation: 8,
-        iconSize: 22,
-        selectedItemColor: Color(0xffffffff),
-        unselectedItemColor: Color(0xffffffff),
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        onTap: (value) {
-          if (value == 0) {
-            // Navigate to forums screen
-          } else if (value == 2) {
-            // Navigate to profile screen
-          }
-        },
+        title: Text("Group Chats"),
+
       ),
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -98,7 +59,13 @@ class HomePage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          // Navigate to AddGroupChat
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddGroupChat()),
+          );
+        },
         backgroundColor: Color(0xFF113953),
         child: Icon(Icons.message),
       ),
