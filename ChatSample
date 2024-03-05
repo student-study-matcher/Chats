@@ -68,7 +68,7 @@ class ChatSample extends StatelessWidget {
                 ],
               ),
               child: Text(
-                "Hello, How are you?",
+                "Hi, Anna How are you?",
                 style: TextStyle(fontSize: 16),
               ),
             ),
